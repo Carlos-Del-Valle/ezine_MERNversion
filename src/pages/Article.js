@@ -1,8 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
 import 'whatwg-fetch'; // Carlos del futuro, recuerda que este package es para que funcione la API fetch con IE (LOL)
-import articleContent from "./article-content"
-import Articles from "../components/Articles"
+import articleContent from "./article-content";
+import Articles from "../components/Articles";
 import NotFound from "./NotFound";
+import CommentList from "../components/CommentsList"
+import CommentsList from "../components/CommentsList";
 
 const Article = ({ match }) => {
 
@@ -36,6 +38,7 @@ const Article = ({ match }) => {
                     {paragraph}
                 </p>
             ))}
+            <CommentsList comments={articleInfo.comments} />
             <h1 className="sm:text-2x text-xl font-bold mt-4 mb-4 text-gray-900">
                 Other Articles
             </h1>
